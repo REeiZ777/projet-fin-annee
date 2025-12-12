@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBGconnect - Plateforme de Connexion Artisanale</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#recherche">Recherche</a></li>
+                <!-- Other links disabled for this deliverable -->
+                <!-- <li><a href="#">Offres</a></li> -->
+                <!-- <li><a href="#">Profil</a></li> -->
+            </ul>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-outline">Connexion</a>
+                <a href="#" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="tagline">Plateforme de Connexion pour Artisans, Apprentis et Employeurs</span>
+                <h1>Connectez-vous au savoir-faire local ivoirien</h1>
+                <p>LBGconnect digitalise le secteur des artisans en Côte d’Ivoire. Trouvez l'expert qu'il vous faut ou
+                    l'opportunité qui changera votre carrière.</p>
+                <div class="hero-buttons">
+                    <a href="#recherche" class="btn btn-primary">Trouver un artisan</a>
+                    <a href="#" class="btn btn-outline">Je suis artisan</a>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">2500+</span>
+                        <span class="stat-label">Artisans</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">750+</span>
+                        <span class="stat-label">Apprentis</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1200+</span>
+                        <span class="stat-label">Employeurs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Using a placeholder/colored block instead of external img to ensure stability if offline, 
+                     but referencing the user's desire for visuals. I'll use a semantic illustration with CSS/Icon. -->
+                <div class="illustration-circle">
+                    <i class="fas fa-tools main-icon"></i>
+                    <div class="floating-card card-1">
+                        <i class="fas fa-hammer"></i>
+                        <span>Menuiserie</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-bolt"></i>
+                        <span>Électricité</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-cut"></i>
+                        <span>Couture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentation Section (Part of Accueil) -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi choisir LBGconnect ?</h2>
+                <p>Une solution complète pour structurer le secteur artisanal.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Accessible partout</h3>
+                    <p>Une interface responsive adaptée aux mobiles pour vous suivre sur tous vos chantiers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search-location"></i>
+                    <h3>Recherche locale</h3>
+                    <p>Trouvez des artisans et des opportunités près de chez vous grâce à la géolocalisation.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hand-shake"></i>
+                    <h3>Mise en relation</h3>
+                    <p>Facilitez les échanges entre employeurs, artisans et apprentis en toute simplicité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Recherche -->
+    <section id="recherche" class="search-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recherche & Matching</h2>
+                <p>Explorez les profils et trouvez exactement ce que vous cherchez.</p>
+            </div>
+
+            <div class="search-interface">
+                <!-- Search Bar -->
+                <div class="search-bar-container">
+                    <form class="search-form">
+                        <div class="input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Métier, compétence (ex: Plombier)...">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select>
+                                <option value="">Localisation (Tout)</option>
+                                <option value="abidjan">Abidjan</option>
+                                <option value="bouake">Bouaké</option>
+                                <option value="korhogo">Korhogo</option>
+                                <option value="sanpedro">San-Pédro</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-filter"></i>
+                            <select>
+                                <option value="artisan">Artisan</option>
+                                <option value="apprenti">Apprenti</option>
+                                <option value="emploi">Offre d'emploi</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Rechercher</button>
+                    </form>
+                </div>
+
+                <!-- Filters & Results -->
+                <div class="results-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="filters-sidebar">
+                        <h3>Filtres</h3>
+                        <div class="filter-group">
+                            <label>Expérience</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox"> Débutant (0-2 ans)</label>
+                                <label><input type="checkbox"> Intermédiaire (3-5 ans)</label>
+                                <label><input type="checkbox"> Expert (5+ ans)</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Disponibilité</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox"> Immédiate</label>
+                                <label><input type="checkbox"> Week-end uniquement</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Note minimale</label>
+                            <input type="range" min="1" max="5" step="1">
+                        </div>
+                    </aside>
+
+                    <!-- Results Grid -->
+                    <div class="results-grid">
+                        <!-- Result Card 1 -->
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <div class="avatar">K</div>
+                                <div class="status-badge available">Disponible</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Kouamé Jean</h3>
+                                <p class="job-title">Menuisier Ébéniste</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</p>
+                                <div class="tags">
+                                    <span>Meubles</span>
+                                    <span>Restauration</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="#" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+
+                        <!-- Result Card 2 -->
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <div class="avatar color-2">A</div>
+                                <div class="status-badge busy">Occupé</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Amina Traoré</h3>
+                                <p class="job-title">Couturière Styliste</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Bouaké</p>
+                                <div class="tags">
+                                    <span>Pagne</span>
+                                    <span>Broderie</span>
+                                    <span>Moderne</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="#" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+
+                        <!-- Result Card 3 -->
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <div class="avatar color-3">M</div>
+                                <div class="status-badge available">Disponible</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Moussa Diop</h3>
+                                <p class="job-title">Électricien Bâtiment</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Abidjan, Yopougon</p>
+                                <div class="tags">
+                                    <span>Installation</span>
+                                    <span>Dépannage</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="#" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
