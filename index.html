@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBGconnect - Plateforme de Connexion Artisanale</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#recherche">Recherche</a></li>
+                <li><a href="jobs.html">Offres</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="tagline">Plateforme de Connexion pour Artisans, Apprentis et Employeurs</span>
+                <h1>Connectez-vous au savoir-faire local ivoirien</h1>
+                <p>LBGconnect digitalise le secteur des artisans en Côte d’Ivoire. Trouvez l'expert qu'il vous faut ou
+                    l'opportunité qui changera votre carrière.</p>
+                <div class="hero-buttons">
+                    <a href="#recherche" class="btn btn-primary">Trouver un artisan</a>
+                    <a href="#" class="btn btn-outline">Je suis artisan</a>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">2500+</span>
+                        <span class="stat-label">Artisans</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">750+</span>
+                        <span class="stat-label">Apprentis</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1200+</span>
+                        <span class="stat-label">Employeurs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <!-- Black Craftsman/Carpenter authentic portrait -->
+                    <img src="assets/images/hero.png" alt="Artisan menuisier au travail"
+                        style="object-fit: cover; object-position: center 20%;">
+                    <div class="stat-badge badge-1">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-content">
+                            <strong>+2,500</strong>
+                            <span>Artisans qualifiés</span>
+                        </div>
+                    </div>
+                    <div class="stat-badge badge-2">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-content">
+                            <strong>4.9/5</strong>
+                            <span>Note moyenne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi choisir LBGconnect ?</h2>
+                <p>Une plateforme pensée pour valoriser le savoir-faire local et simplifier vos projets.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Profils Vérifiés</h3>
+                    <p>Chaque artisan est rigoureusement vérifié pour garantir la qualité et la fiabilité des
+                        prestations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Recherche Locale</h3>
+                    <p>Trouvez facilement des professionnels compétents près de chez vous grâce à notre géolocalisation.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Connexion Directe</h3>
+                    <p>Discutez en direct avec les artisans, demandez des devis et gérez vos projets sans intermédiaire.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles / Artisans Section -->
+    <section class="profiles-section" id="artisans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Artisans à la Une</h2>
+                <p>Découvrez les talents les mieux notés de votre région.</p>
+            </div>
+
+            <!-- Dynamic Grid (Will be filtered by JS) -->
+            <div class="profiles-grid" id="profilesGrid">
+
+                <!-- Profile Card 1 -->
+                <div class="profile-card" data-location="abidjan" data-type="electricien">
+                    <div class="card-image">
+                        <!-- Black Electrician Portrait -->
+                        <img src="assets/images/hero.png" alt="Kouamé Jean">
+                        <span class="card-badge">Top Pro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kouamé Jean</h3>
+                        <span class="card-job">Électricien</span>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(45 avis)</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Abidjan</span>
+                            <a href="artisan-profile.html" class="btn-icon" title="Voir profil"><i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="messages.html" class="btn-icon" title="Contacter"><i
+                                    class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card 2 -->
+                <div class="profile-card" data-location="bouake" data-type="plomberie">
+                    <div class="card-image">
+                        <!-- Black Female Plumber/Engineer -->
+                        <img src="assets/images/avatar-amina.png" alt="Amina Traoré">
+                    </div>
+                    <div class="card-content">
+                        <h3>Amina Traoré</h3>
+                        <span class="card-job">Plomberie</span>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(28 avis)</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Bouaké</span>
+                            <a href="artisan-profile.html" class="btn-icon" title="Voir profil"><i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="messages.html" class="btn-icon" title="Contacter"><i
+                                    class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card 3 -->
+                <div class="profile-card" data-location="yamoussoukro" data-type="menuiserie">
+                    <div class="card-image">
+                        <!-- Black Male Carpenter/Architect -->
+                        <img src="assets/images/avatar-moussa.png" alt="Moussa Diop">
+                        <span class="card-badge">Nouveau</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Moussa Diop</h3>
+                        <span class="card-job">Menuiserie</span>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(12 avis)</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Yamoussoukro</span>
+                            <a href="artisan-profile.html" class="btn-icon" title="Voir profil"><i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="messages.html" class="btn-icon" title="Contacter"><i
+                                    class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card 4 -->
+                <div class="profile-card" data-location="abidjan" data-type="peinture">
+                    <div class="card-image">
+                        <!-- Black Female Designer -->
+                        <img src="assets/images/avatar-adjoua.png" alt="Adjoua Bamba">
+                    </div>
+                    <div class="card-content">
+                        <h3>Adjoua Bamba</h3>
+                        <span class="card-job">Décoratrice</span>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(34 avis)</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Abidjan</span>
+                            <a href="artisan-profile.html" class="btn-icon" title="Voir profil"><i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="messages.html" class="btn-icon" title="Contacter"><i
+                                    class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Recherche -->
+    <section id="recherche" class="search-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recherche & Matching</h2>
+                <p>Explorez les profils et trouvez exactement ce que vous cherchez.</p>
+            </div>
+
+            <div class="search-interface">
+                <!-- Search Bar -->
+                <div class="search-bar-container">
+                    <form class="search-form" id="homeSearchForm">
+                        <div class="input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="homeSearchInput" placeholder="Métier, compétence (ex: Plombier)...">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="homeLocationSelect">
+                                <option value="">Localisation (Tout)</option>
+                                <option value="abidjan">Abidjan</option>
+                                <option value="bouake">Bouaké</option>
+                                <option value="korhogo">Korhogo</option>
+                                <option value="sanpedro">San-Pédro</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-filter"></i>
+                            <select id="homeTypeSelect">
+                                <option value="">Type de profil (Tout)</option>
+                                <option value="artisan">Artisan</option>
+                                <option value="apprenti">Apprenti</option>
+                                <option value="emploi">Offre d'emploi</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Rechercher</button>
+                    </form>
+                </div>
+
+                <!-- Filters & Results -->
+                <div class="results-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="filters-sidebar">
+                        <h3>Filtres</h3>
+                        <div class="filter-group">
+                            <label>Expérience</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="debutant"> Débutant (0-2 ans)</label>
+                                <label><input type="checkbox" value="intermediaire"> Intermédiaire (3-5 ans)</label>
+                                <label><input type="checkbox" value="expert"> Expert (5+ ans)</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Disponibilité</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="available"> Immédiate</label>
+                                <label><input type="checkbox" value="weekend"> Week-end uniquement</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Note minimale</label>
+                            <input type="range" id="homeRatingRange" min="1" max="5" step="1" value="1">
+                        </div>
+                    </aside>
+
+                    <!-- Results Grid -->
+                    <div class="results-grid" id="homeResultsGrid">
+                        <!-- Result Card 1 -->
+                        <div class="profile-card" data-type="artisan">
+                            <div class="card-header">
+                                <img src="assets/images/hero.png" class="avatar" alt="Kouamé Jean"
+                                    style="object-fit: cover;">
+                                <div class="status-badge available">Disponible</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Kouamé Jean</h3>
+                                <p class="job-title">Menuisier Ébéniste</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</p>
+                                <div class="tags">
+                                    <span>Meubles</span>
+                                    <span>Restauration</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="artisan-profile.html" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="messages.html" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+
+                        <!-- Result Card 2 -->
+                        <div class="profile-card" data-type="artisan">
+                            <div class="card-header">
+                                <img src="assets/images/avatar-amina.png" class="avatar" alt="Amina Traoré"
+                                    style="object-fit: cover;">
+                                <div class="status-badge busy">Occupé</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Amina Traoré</h3>
+                                <p class="job-title">Couturière Styliste</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Bouaké</p>
+                                <div class="tags">
+                                    <span>Pagne</span>
+                                    <span>Broderie</span>
+                                    <span>Moderne</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="artisan-profile.html" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="messages.html" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+
+                        <!-- Result Card 3 -->
+                        <div class="profile-card" data-type="artisan">
+                            <div class="card-header">
+                                <img src="assets/images/avatar-moussa.png" class="avatar" alt="Moussa Diop"
+                                    style="object-fit: cover;">
+                                <div class="status-badge available">Disponible</div>
+                            </div>
+                            <div class="card-body">
+                                <h3>Moussa Diop</h3>
+                                <p class="job-title">Électricien Bâtiment</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <p class="location"><i class="fas fa-map-marker-alt"></i> Abidjan, Yopougon</p>
+                                <div class="tags">
+                                    <span>Installation</span>
+                                    <span>Dépannage</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="artisan-profile.html" class="btn btn-outline btn-sm">Voir profil</a>
+                                <a href="messages.html" class="btn btn-primary btn-sm">Contacter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

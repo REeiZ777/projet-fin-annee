@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres d'Emploi - LBGconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#recherche">Recherche</a></li>
+                <li><a href="jobs.html" class="active">Offres</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jobs Hero -->
+    <section class="jobs-hero">
+        <div class="container">
+            <h1>Offres d'Emploi</h1>
+            <p>Découvrez les opportunités professionnelles dans le secteur artisanal</p>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs-section">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-bar-container">
+                <form class="search-form" id="mainSearchForm">
+                    <div class="input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Métier, compétence...">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="locationSelect">
+                            <option value="">Localisation (Tout)</option>
+                            <option value="abidjan">Abidjan</option>
+                            <option value="bouake">Bouaké</option>
+                            <option value="korhogo">Korhogo</option>
+                            <option value="sanpedro">San-Pédro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-briefcase"></i>
+                        <select id="contractSelect">
+                            <option value="">Type de contrat</option>
+                            <option value="cdi">CDI</option>
+                            <option value="cdd">CDD</option>
+                            <option value="stage">Stage</option>
+                            <option value="apprentissage">Apprentissage</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                </form>
+            </div>
+
+            <!-- Results Layout -->
+            <div class="results-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3>Filtres</h3>
+                    <div class="filter-group">
+                        <label>Type de contrat</label>
+                        <div class="checkbox-group" id="contractCheckboxes">
+                            <label><input type="checkbox" value="cdi"> CDI</label>
+                            <label><input type="checkbox" value="cdd"> CDD</label>
+                            <label><input type="checkbox" value="stage"> Stage</label>
+                            <label><input type="checkbox" value="apprentissage"> Apprentissage</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Secteur</label>
+                        <div class="checkbox-group" id="sectorCheckboxes">
+                            <label><input type="checkbox" value="menuiserie"> Menuiserie</label>
+                            <label><input type="checkbox" value="electricite"> Électricité</label>
+                            <label><input type="checkbox" value="plomberie"> Plomberie</label>
+                            <label><input type="checkbox" value="couture"> Couture</label>
+                            <label><input type="checkbox" value="mecanique"> Mécanique</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Salaire minimum (FCFA)</label>
+                        <input type="range" id="salaryRange" min="50000" max="500000" step="10000" value="50000">
+                        <span class="range-value" id="salaryValue">50 000 FCFA+</span>
+                    </div>
+                    <button class="btn btn-outline btn-full" id="resetFilters">Réinitialiser</button>
+                </aside>
+
+                <!-- Jobs Grid -->
+                <div class="jobs-grid" id="jobsGrid">
+                    <div class="jobs-header">
+                        <h2 id="jobsCount">6 offres disponibles</h2>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="recent">Plus récentes</option>
+                            <option value="salary-asc">Salaire croissant</option>
+                            <option value="salary-desc">Salaire décroissant</option>
+                        </select>
+                    </div>
+
+                    <!-- No Results Message (Hidden by default) -->
+                    <div id="noResults" class="no-results" style="display: none; text-align: center; padding: 40px;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: #ccc; margin-bottom: 20px;"></i>
+                        <h3>Aucun résultat trouvé</h3>
+                        <p style="color: #666;">Essayez de modifier vos critères de recherche ou réinitialisez les
+                            filtres.</p>
+                        <button class="btn btn-primary btn-sm" style="margin-top: 15px;"
+                            onclick="document.getElementById('resetFilters').click()">Réinitialiser tout</button>
+                    </div>
+
+                    <!-- Job Card 1 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="job-badge new">Nouveau</div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Menuisier Expérimenté</a></h3>
+                            <p class="company-name">Atelier Bois Moderne SARL</p>
+                            <p class="job-description">Nous recherchons un menuisier expérimenté pour rejoindre notre
+                                équipe. Fabrication de meubles sur mesure pour une clientèle haut de gamme.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</span>
+                                <span><i class="fas fa-briefcase"></i> CDI</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Menuiserie</span>
+                                <span>Ébénisterie</span>
+                                <span>5+ ans</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>150,000 - 250,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo color-2">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="job-badge urgent">Urgent</div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Électricien Bâtiment</a></h3>
+                            <p class="company-name">Entreprise Générale de Construction</p>
+                            <p class="job-description">Recherche électricien qualifié pour travaux d'installation
+                                électrique sur chantiers résidentiels et commerciaux.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Abidjan, Yopougon</span>
+                                <span><i class="fas fa-briefcase"></i> CDD</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Électricité</span>
+                                <span>Installation</span>
+                                <span>3+ ans</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>120,000 - 180,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo color-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Apprenti Couturier</a></h3>
+                            <p class="company-name">Atelier de Couture Élégance</p>
+                            <p class="job-description">Formation en couture traditionnelle et moderne. Opportunité
+                                d'apprendre auprès de maîtres couturiers expérimentés.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Bouaké</span>
+                                <span><i class="fas fa-briefcase"></i> Apprentissage</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Couture</span>
+                                <span>Formation</span>
+                                <span>Débutant</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>50,000 - 80,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 4 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Plombier Sanitaire</a></h3>
+                            <p class="company-name">Services Plomberie Express</p>
+                            <p class="job-description">Recherche plombier pour interventions de dépannage et
+                                installation sanitaire chez particuliers et entreprises.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Abidjan, Marcory</span>
+                                <span><i class="fas fa-briefcase"></i> CDI</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Plomberie</span>
+                                <span>Dépannage</span>
+                                <span>2+ ans</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>100,000 - 150,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 5 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo color-2">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="job-badge new">Nouveau</div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Mécanicien Auto</a></h3>
+                            <p class="company-name">Garage Moderne CI</p>
+                            <p class="job-description">Garage automobile recherche mécanicien qualifié pour entretien
+                                et réparation de véhicules toutes marques.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Abidjan, Koumassi</span>
+                                <span><i class="fas fa-briefcase"></i> CDI</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Mécanique</span>
+                                <span>Automobile</span>
+                                <span>3+ ans</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>130,000 - 200,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 6 -->
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <div class="company-logo color-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <h3><a href="job-detail.html">Soudeur Métallier</a></h3>
+                            <p class="company-name">Métallerie Ivoirienne</p>
+                            <p class="job-description">Recherche soudeur expérimenté pour fabrication de structures
+                                métalliques, portails, grilles et garde-corps.</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> San-Pédro</span>
+                                <span><i class="fas fa-briefcase"></i> CDD</span>
+                                <span><i class="fas fa-clock"></i> Temps plein</span>
+                            </div>
+                            <div class="job-tags">
+                                <span>Soudure</span>
+                                <span>Métallerie</span>
+                                <span>4+ ans</span>
+                            </div>
+                        </div>
+                        <div class="job-card-footer">
+                            <div class="job-salary">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>110,000 - 170,000 FCFA/mois</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a href="job-detail.html" class="btn btn-primary btn-sm">Postuler</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                            Précédent
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                            <span>...</span>
+                            <button class="page-number">10</button>
+                        </div>
+                        <button class="btn btn-outline">
+                            Suivant
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

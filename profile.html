@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil - LBGconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#recherche">Recherche</a></li>
+                <li><a href="jobs.html">Offres</a></li>
+                <li><a href="profile.html" class="active">Profil</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="messages.html" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i>
+                    Messages
+                </a>
+                <a href="profile.html" class="btn btn-primary">
+                    <i class="fas fa-user-circle"></i>
+                    Mon Compte
+                </a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="profile-header-card">
+                <div class="profile-cover"></div>
+                <div class="profile-header-content">
+                    <div class="profile-avatar-large">
+                        <img src="assets/images/hero.png" alt="Profile">
+                        <button class="edit-avatar-btn" onclick="handleEdit('Avatar')">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-header-info">
+                        <h1>Kouamé Jean</h1>
+                        <p class="profile-title">Menuisier Ébéniste</p>
+                        <div class="profile-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</span>
+                            <span><i class="fas fa-calendar"></i> Membre depuis Jan 2023</span>
+                            <span class="status-badge available">Disponible</span>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn btn-outline" onclick="handleEdit('Profil')">
+                            <i class="fas fa-edit"></i>
+                            Modifier le profil
+                        </button>
+                        <button class="btn btn-primary" onclick="handleShare()">
+                            <i class="fas fa-share-alt"></i>
+                            Partager
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-layout">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <!-- Stats Card -->
+                    <div class="profile-card">
+                        <h3>Statistiques</h3>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <span class="stat-value">4.5</span>
+                                    <span class="stat-label">Note moyenne</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <span class="stat-value">127</span>
+                                    <span class="stat-label">Projets réalisés</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <span class="stat-value">89</span>
+                                    <span class="stat-label">Clients satisfaits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Card -->
+                    <div class="profile-card">
+                        <h3>Compétences</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Menuiserie</span>
+                            <span class="skill-tag">Ébénisterie</span>
+                            <span class="skill-tag">Restauration</span>
+                            <span class="skill-tag">Fabrication sur mesure</span>
+                            <span class="skill-tag">Design</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm btn-full">
+                            <i class="fas fa-plus"></i>
+                            Ajouter une compétence
+                        </button>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="profile-card">
+                        <h3>Contact</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+225 07 XX XX XX XX</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>kouame.jean@email.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <span>www.kouamemenuiserie.ci</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="profile-main">
+                    <!-- About Section -->
+                    <div class="profile-card">
+                        <div class="card-header-flex">
+                            <h3>À propos</h3>
+                            <button class="btn-icon">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <p>Artisan menuisier avec plus de 10 ans d'expérience dans la fabrication de meubles sur
+                            mesure et la restauration de pièces anciennes. Passionné par le travail du bois et
+                            spécialisé dans l'ébénisterie de qualité. Je m'engage à fournir un travail soigné et
+                            durable à mes clients.</p>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="profile-card">
+                        <div class="card-header-flex">
+                            <h3>Expérience professionnelle</h3>
+                            <button class="btn-icon">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Menuisier Indépendant</h4>
+                                    <p class="timeline-meta">2018 - Présent · Abidjan</p>
+                                    <p>Création de meubles sur mesure pour particuliers et entreprises. Spécialisation
+                                        dans les tables, armoires et bibliothèques en bois massif.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Chef d'atelier - Menuiserie Moderne</h4>
+                                    <p class="timeline-meta">2015 - 2018 · Abidjan</p>
+                                    <p>Gestion d'une équipe de 5 menuisiers. Supervision de projets de grande envergure
+                                        pour hôtels et restaurants.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Apprenti Menuisier</h4>
+                                    <p class="timeline-meta">2012 - 2015 · Bouaké</p>
+                                    <p>Formation complète en menuiserie traditionnelle et moderne auprès de maîtres
+                                        artisans.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Section -->
+                    <div class="profile-card">
+                        <div class="card-header-flex">
+                            <h3>Portfolio</h3>
+                            <button class="btn-icon" onclick="handleEdit('Ajout Portfolio')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=600&auto=format&fit=crop"
+                                        alt="Table en acajou" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Table en acajou</h4>
+                                    <p>Fabrication sur mesure</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1594056381764-2738748d9d61?q=80&w=600&auto=format&fit=crop"
+                                        alt="Bibliothèque murale" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Bibliothèque murale</h4>
+                                    <p>Design moderne</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop"
+                                        alt="Armoire restaurée" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h4>Armoire restaurée</h4>
+                                    <p>Restauration d'antiquité</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="profile-card">
+                        <div class="card-header-flex">
+                            <h3>Avis clients (24)</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar">M</div>
+                                    <div class="review-info">
+                                        <h4>Marie Koné</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 2 semaines</span>
+                                </div>
+                                <p class="review-text">Excellent travail ! La table que Kouamé a fabriquée pour nous
+                                    est magnifique. Très professionnel et à l'écoute de nos besoins.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar color-2">P</div>
+                                    <div class="review-info">
+                                        <h4>Pierre Yao</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 1 mois</span>
+                                </div>
+                                <p class="review-text">Bon artisan, travail de qualité. Délais respectés. Je
+                                    recommande.</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-full">Voir tous les avis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

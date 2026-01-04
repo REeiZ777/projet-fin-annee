@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kouamé Jean - Menuisier Ébéniste - LBGconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#recherche">Recherche</a></li>
+                <li><a href="jobs.html">Offres</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Artisan Profile Section -->
+    <section class="artisan-profile-section">
+        <div class="container">
+            <!-- Profile Hero -->
+            <div class="artisan-hero">
+                <div class="artisan-hero-content">
+                    <div class="artisan-avatar-xl">
+                        <img src="assets/images/hero.png" alt="Kouamé Jean"
+                            style="width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 50%;">
+                    </div>
+                    <div class="artisan-hero-info">
+                        <div class="status-badge available">Disponible</div>
+                        <h1>Kouamé Jean</h1>
+                        <p class="artisan-specialty">Menuisier Ébéniste</p>
+                        <div class="artisan-meta">
+                            <div class="rating-large">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-score">4.5</span>
+                                <span class="rating-count">(24 avis)</span>
+                            </div>
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> 10+ ans d'expérience</span>
+                            <span class="meta-item"><i class="fas fa-check-circle"></i> Profil vérifié</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="artisan-hero-actions">
+                    <button class="btn btn-primary btn-lg" onclick="openContactModal()">
+                        <i class="fas fa-envelope"></i>
+                        Contacter
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="toggleHeart(this)">
+                        <i class="far fa-heart"></i>
+                        Sauvegarder
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="handleShare()">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="artisan-layout">
+                <!-- Main Content -->
+                <div class="artisan-main">
+                    <!-- About -->
+                    <div class="artisan-card">
+                        <h2><i class="fas fa-user"></i> À propos</h2>
+                        <p>Artisan menuisier avec plus de 10 ans d'expérience dans la fabrication de meubles sur
+                            mesure et la restauration de pièces anciennes. Passionné par le travail du bois et
+                            spécialisé dans l'ébénisterie de qualité. Je m'engage à fournir un travail soigné et
+                            durable à mes clients, en utilisant des techniques traditionnelles et modernes.</p>
+                        <p>Mon atelier est équipé d'outils professionnels permettant de réaliser tous types de
+                            projets, des plus simples aux plus complexes. Je travaille principalement avec des bois
+                            nobles (acajou, teck, ébène) et propose également des services de restauration de meubles
+                            anciens.</p>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="artisan-card">
+                        <h2><i class="fas fa-tools"></i> Services proposés</h2>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <i class="fas fa-couch"></i>
+                                <h3>Fabrication sur mesure</h3>
+                                <p>Tables, chaises, armoires, bibliothèques selon vos besoins</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <h3>Restauration</h3>
+                                <p>Remise en état de meubles anciens et pièces d'antiquité</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <h3>Design & Conception</h3>
+                                <p>Création de plans et conseils pour vos projets</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-home"></i>
+                                <h3>Aménagement</h3>
+                                <p>Placards, dressings, aménagements intérieurs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div class="artisan-card">
+                        <h2><i class="fas fa-images"></i> Portfolio</h2>
+                        <div class="portfolio-gallery">
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=600&auto=format&fit=crop"
+                                        alt="Table en acajou" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Table en acajou</h4>
+                                    <p>Fabrication sur mesure - 2024</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1594056381764-2738748d9d61?q=80&w=600&auto=format&fit=crop"
+                                        alt="Bibliothèque murale" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Bibliothèque murale</h4>
+                                    <p>Design moderne - 2024</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop"
+                                        alt="Armoire restaurée" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Armoire restaurée</h4>
+                                    <p>Restauration - 2023</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1503602642458-2321114453ad?q=80&w=600&auto=format&fit=crop"
+                                        alt="Ensemble salon" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Ensemble salon</h4>
+                                    <p>Bois massif - 2023</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=600&auto=format&fit=crop"
+                                        alt="Bureau sur mesure" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Bureau sur mesure</h4>
+                                    <p>Teck - 2023</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-image">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-b0346efee539?q=80&w=600&auto=format&fit=crop"
+                                        alt="Chaises design" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="gallery-overlay">
+                                    <h4>Chaises design</h4>
+                                    <p>Série de 6 - 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="artisan-card">
+                        <h2><i class="fas fa-star"></i> Avis clients (24)</h2>
+                        <div class="reviews-summary">
+                            <div class="reviews-score">
+                                <div class="score-number">4.5</div>
+                                <div class="score-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="score-text">Basé sur 24 avis</div>
+                            </div>
+                            <div class="reviews-breakdown">
+                                <div class="breakdown-item">
+                                    <span>5 étoiles</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span>18</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>4 étoiles</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-fill" style="width: 16%"></div>
+                                    </div>
+                                    <span>4</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>3 étoiles</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-fill" style="width: 8%"></div>
+                                    </div>
+                                    <span>2</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>2 étoiles</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>1 étoile</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar">M</div>
+                                    <div class="review-info">
+                                        <h4>Marie Koné</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 2 semaines</span>
+                                </div>
+                                <p class="review-text">Excellent travail ! La table que Kouamé a fabriquée pour nous
+                                    est magnifique. Très professionnel et à l'écoute de nos besoins. Les finitions sont
+                                    impeccables et le bois utilisé est de très haute qualité. Je recommande vivement
+                                    !</p>
+                                <div class="review-helpful">
+                                    <button class="btn-helpful"><i class="fas fa-thumbs-up"></i> Utile (12)</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar color-2">P</div>
+                                    <div class="review-info">
+                                        <h4>Pierre Yao</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 1 mois</span>
+                                </div>
+                                <p class="review-text">Bon artisan, travail de qualité. Délais respectés. Je
+                                    recommande pour tous vos projets de menuiserie.</p>
+                                <div class="review-helpful">
+                                    <button class="btn-helpful"><i class="fas fa-thumbs-up"></i> Utile (8)</button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar color-3">A</div>
+                                    <div class="review-info">
+                                        <h4>Adjoua Bamba</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 2 mois</span>
+                                </div>
+                                <p class="review-text">Restauration parfaite de mon armoire ancienne. Kouamé a su
+                                    redonner vie à ce meuble tout en préservant son authenticité. Un vrai
+                                    professionnel !</p>
+                                <div class="review-helpful">
+                                    <button class="btn-helpful"><i class="fas fa-thumbs-up"></i> Utile (15)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline btn-full">Voir tous les avis</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="artisan-sidebar">
+                    <!-- Quick Info -->
+                    <div class="artisan-card sticky-card">
+                        <h3>Informations</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Disponibilité</strong>
+                                    <span>Immédiate</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>
+                                    <strong>Tarif horaire</strong>
+                                    <span>À partir de 5000 FCFA/h</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-language"></i>
+                                <div>
+                                    <strong>Langues</strong>
+                                    <span>Français, Baoulé</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>
+                                    <strong>Membre depuis</strong>
+                                    <span>Janvier 2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="openContactModal()">
+                            <i class="fas fa-envelope"></i>
+                            Envoyer un message
+                        </button>
+                        <button class="btn btn-outline btn-full">
+                            <i class="fas fa-phone"></i>
+                            Voir le numéro
+                        </button>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="artisan-card">
+                        <h3>Compétences</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Menuiserie</span>
+                            <span class="skill-tag">Ébénisterie</span>
+                            <span class="skill-tag">Restauration</span>
+                            <span class="skill-tag">Fabrication sur mesure</span>
+                            <span class="skill-tag">Design</span>
+                            <span class="skill-tag">Aménagement</span>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="artisan-card">
+                        <h3>Certifications</h3>
+                        <div class="certifications-list">
+                            <div class="cert-item">
+                                <i class="fas fa-certificate"></i>
+                                <div>
+                                    <strong>CAP Menuiserie</strong>
+                                    <span>2012</span>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <i class="fas fa-certificate"></i>
+                                <div>
+                                    <strong>Formation Ébénisterie</strong>
+                                    <span>2015</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contacter Kouamé Jean</h2>
+                <button class="modal-close" onclick="closeContactModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="contactName">Votre nom</label>
+                    <input type="text" id="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Votre email</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Votre téléphone</label>
+                    <input type="tel" id="contactPhone">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Votre message</label>
+                    <textarea id="contactMessage" rows="5" required placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    Envoyer le message
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
