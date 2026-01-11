@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie - LBGconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="messages-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#recherche">Recherche</a></li>
+                <li><a href="jobs.html">Offres</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <!-- Will be populated by JS -->
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Messages Section -->
+    <section class="messages-section">
+        <div class="container-fluid">
+            <div class="messages-container" id="messagesContainer">
+                <!-- Conversations List -->
+                <aside class="conversations-sidebar">
+                    <div class="conversations-header">
+                        <h2>Messages</h2>
+                        <button class="btn-icon" title="Nouveau message">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <div class="conversations-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Rechercher une conversation...">
+                    </div>
+
+                    <div class="conversations-list">
+                        <!-- Conversation Item 1 - Active -->
+                        <div class="conversation-item active" onclick="openChatMobile()">
+                            <div class="conversation-avatar">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; object-position: top center;">
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-header-row">
+                                    <h4>Kouamé Jean</h4>
+                                    <span class="conversation-time">10:30</span>
+                                </div>
+                                <div class="conversation-preview">
+                                    <p>D'accord, je peux passer demain matin...</p>
+                                    <span class="unread-badge">2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation Item 2 -->
+                        <div class="conversation-item" onclick="openChatMobile()">
+                            <div class="conversation-avatar">
+                                <img src="assets/images/avatar-amina.png" alt="Amina Traoré"
+                                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-header-row">
+                                    <h4>Amina Traoré</h4>
+                                    <span class="conversation-time">Hier</span>
+                                </div>
+                                <div class="conversation-preview">
+                                    <p>Merci pour votre réponse rapide !</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation Item 3 -->
+                        <div class="conversation-item" onclick="openChatMobile()">
+                            <div class="conversation-avatar">
+                                <img src="assets/images/avatar-moussa.png" alt="Moussa Diop"
+                                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-header-row">
+                                    <h4>Moussa Diop</h4>
+                                    <span class="conversation-time">Mar</span>
+                                </div>
+                                <div class="conversation-preview">
+                                    <p>Je suis disponible pour le projet</p>
+                                    <span class="unread-badge">1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation Item 4 -->
+                        <div class="conversation-item" onclick="openChatMobile()">
+                            <div class="conversation-avatar">
+                                <img src="assets/images/avatar-adjoua.png" alt="Adjoua Bamba"
+                                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-header-row">
+                                    <h4>Adjoua Bamba</h4>
+                                    <span class="conversation-time">Lun</span>
+                                </div>
+                                <div class="conversation-preview">
+                                    <p>Parfait, à bientôt alors</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation Item 5 -->
+                        <div class="conversation-item" onclick="openChatMobile()">
+                            <div class="conversation-avatar">
+                                <div class="avatar color-2">E</div>
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-header-row">
+                                    <h4>Entreprise ABC</h4>
+                                    <span class="conversation-time">Dim</span>
+                                </div>
+                                <div class="conversation-preview">
+                                    <p>Nous avons bien reçu votre candidature</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Chat Area -->
+                <div class="chat-area">
+                    <!-- Chat Header -->
+                    <div class="chat-header">
+                        <div class="chat-user-info">
+                            <button class="btn-icon back-to-list" onclick="closeChatMobile()"
+                                style="display: none; margin-right: 10px;">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 15px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <div class="chat-user-details">
+                                <h3>Kouamé Jean</h3>
+                                <span class="user-status online">
+                                    <i class="fas fa-circle"></i>
+                                    En ligne
+                                </span>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="btn-icon" title="Rechercher">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn-icon" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Messages Container -->
+                    <div class="messages-container-area">
+                        <div class="messages-list">
+                            <!-- Date Separator -->
+                            <div class="date-separator">
+                                <span>Aujourd'hui</span>
+                            </div>
+
+                            <!-- Message Received -->
+                            <div class="message received">
+                                <div class="message-avatar">K</div>
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Bonjour ! J'ai vu votre annonce pour la fabrication d'une table en bois. Je
+                                            suis intéressé par ce projet.</p>
+                                    </div>
+                                    <span class="message-time">09:15</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Sent -->
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Bonjour Kouamé ! Merci pour votre intérêt. Pourriez-vous me donner plus de
+                                            détails sur vos réalisations ?</p>
+                                    </div>
+                                    <span class="message-time">09:18</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Received -->
+                            <div class="message received">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Bien sûr ! J'ai plus de 10 ans d'expérience en menuiserie. Je me spécialise
+                                            dans les meubles sur mesure en bois massif.</p>
+                                    </div>
+                                    <span class="message-time">09:20</span>
+                                </div>
+                            </div>
+
+                            <div class="message received">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Vous pouvez consulter mon portfolio sur mon profil. J'ai récemment réalisé
+                                            plusieurs tables en acajou et en teck.</p>
+                                    </div>
+                                    <span class="message-time">09:21</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Sent -->
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Excellent ! Vos réalisations sont très belles. Quels sont vos tarifs et vos
+                                            disponibilités ?</p>
+                                    </div>
+                                    <span class="message-time">09:25</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Received -->
+                            <div class="message received">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Mes tarifs varient selon la complexité du projet, mais généralement entre
+                                            5000 et 7000 FCFA de l'heure. Pour une table, cela dépend des dimensions et
+                                            du bois choisi.</p>
+                                    </div>
+                                    <span class="message-time">09:28</span>
+                                </div>
+                            </div>
+
+                            <div class="message received">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Je suis disponible dès la semaine prochaine. On pourrait se rencontrer pour
+                                            discuter des détails ?</p>
+                                    </div>
+                                    <span class="message-time">09:29</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Sent -->
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>Parfait ! Pouvez-vous passer demain matin vers 10h à mon bureau ?</p>
+                                    </div>
+                                    <span class="message-time">09:32</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Received -->
+                            <div class="message received">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <p>D'accord, je peux passer demain matin à 10h. Quelle est l'adresse exacte ?
+                                        </p>
+                                    </div>
+                                    <span class="message-time">10:30</span>
+                                </div>
+                            </div>
+
+                            <!-- Typing Indicator -->
+                            <div class="message received typing-indicator">
+                                <img src="assets/images/hero.png" alt="Kouamé Jean"
+                                    style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; object-position: top center; margin-right: 10px;">
+                                <div class="message-content">
+                                    <div class="message-bubble">
+                                        <div class="typing-dots">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="message-input-container">
+                        <button class="btn-icon" title="Joindre un fichier">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="btn-icon" title="Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <input type="text" class="message-input" placeholder="Écrivez votre message...">
+                        <button class="btn btn-primary btn-send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Info Panel (Optional - can be toggled) -->
+                <aside class="user-info-panel">
+                    <div class="user-info-header">
+                        <img src="assets/images/hero.png" alt="Kouamé Jean"
+                            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: top center; margin-bottom: 15px; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>Kouamé Jean</h3>
+                        <p>Menuisier Ébéniste</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+
+                    <div class="user-info-actions">
+                        <a href="artisan-profile.html" class="btn btn-outline btn-full">
+                            <i class="fas fa-user"></i>
+                            Voir le profil
+                        </a>
+                        <button class="btn btn-outline btn-full">
+                            <i class="fas fa-phone"></i>
+                            Appeler
+                        </button>
+                    </div>
+
+                    <div class="user-info-details">
+                        <h4>Informations</h4>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Abidjan, Cocody</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>10+ ans d'expérience</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Profil vérifié</span>
+                        </div>
+                    </div>
+
+                    <div class="user-info-details">
+                        <h4>Compétences</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Menuiserie</span>
+                            <span class="skill-tag">Ébénisterie</span>
+                            <span class="skill-tag">Restauration</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

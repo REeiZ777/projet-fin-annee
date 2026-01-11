@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres | LBGconnect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg px-3">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">LBGconnect</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link text-light" th:href="@{/}">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link text-light active" aria-current="page" th:href="@{/jobs}">Offres</a></li>
+                <li class="nav-item"><a class="nav-link text-light" th:href="@{/messages}">Messages</a></li>
+            </ul>
+            <a class="btn btn-brand btn-sm" th:href="@{/jobs/new}" sec:authorize="hasRole('EMPLOYEUR')">Publier</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <p class="badge-soft mb-1">Offres ouvertes</p>
+            <h2 class="mb-0">Trouver une mission</h2>
+            <small class="text-secondary" th:text="${jobsPage.totalElements} + ' resultat(s)'">count</small>
+        </div>
+        <a class="btn btn-outline-light" th:href="@{/}">Retour accueil</a>
+    </div>
+
+    <div th:if="${param.created}" class="alert alert-success">Offre publiee.</div>
+
+    <div class="row g-3">
+        <div class="col-lg-8">
+            <div class="glass-card mb-3" th:each="job : ${jobsPage.content}">
+                <div class="d-flex justify-content-between flex-wrap gap-2">
+                    <div>
+                        <span class="pill" th:text="${job.contractType}">Type</span>
+                        <span class="pill-orange" th:text="${job.location}">Lieu</span>
+                    </div>
+                    <small class="text-secondary" th:text="${#temporals.format(job.createdAt, 'dd/MM/yyyy HH:mm')}">Date</small>
+                </div>
+                <h4 class="mt-2 mb-1" th:text="${job.title}">Titre</h4>
+                <p class="text-secondary mb-2" th:text="${#strings.abbreviate(job.description, 180)}">Description</p>
+                <div class="d-flex gap-2 flex-wrap mb-2">
+                    <span class="pill" th:each="tag : ${job.tags}" th:text="${tag}">tag</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-secondary" th:text="'Budget: ' + ${job.salaryMin} + ' - ' + ${job.salaryMax} + ' FCFA'">Budget</div>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-outline-light btn-sm" th:href="@{'/jobs/' + ${job.id}}">Details</a>
+                        <a class="btn btn-brand btn-sm" th:href="@{/messages}">Candidater</a>
+                    </div>
+                </div>
+            </div>
+            <div th:if="${#lists.isEmpty(jobsPage.content)}" class="glass-card text-secondary">Aucune offre trouvee.</div>
+
+            <div class="d-flex justify-content-between align-items-center mt-3" th:if="${jobsPage.totalPages > 1}">
+                <a class="btn btn-outline-light btn-sm"
+                   th:classappend="${jobsPage.first} ? ' disabled'"
+                   th:href="@{/jobs(q=${q},location=${location},category=${category},contractType=${contractType},salaryMin=${salaryMin},salaryMax=${salaryMax},tag=${tag},page=${jobsPage.number-1},size=${jobsPage.size})}">Precedent</a>
+                <span class="text-secondary">Page <span th:text="${jobsPage.number + 1}">1</span> / <span th:text="${jobsPage.totalPages}">1</span></span>
+                <a class="btn btn-outline-light btn-sm"
+                   th:classappend="${jobsPage.last} ? ' disabled'"
+                   th:href="@{/jobs(q=${q},location=${location},category=${category},contractType=${contractType},salaryMin=${salaryMin},salaryMax=${salaryMax},tag=${tag},page=${jobsPage.number+1},size=${jobsPage.size})}">Suivant</a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="glass-card">
+                <h5 class="mb-2">Filtres rapides</h5>
+                <form class="row g-2" th:action="@{/jobs}" method="get">
+                    <div class="col-12">
+                        <input class="form-control bg-dark text-light border-0" name="q" th:value="${q}" placeholder="Mot-cle">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control bg-dark text-light border-0" name="location" th:value="${location}" placeholder="Ville">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control bg-dark text-light border-0" name="category" th:value="${category}" placeholder="Categorie">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control bg-dark text-light border-0" name="contractType" th:value="${contractType}" placeholder="Type de contrat (Projet, CDI...)">
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control bg-dark text-light border-0" type="number" name="salaryMin" th:value="${salaryMin}" placeholder="Budget min">
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control bg-dark text-light border-0" type="number" name="salaryMax" th:value="${salaryMax}" placeholder="Budget max">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control bg-dark text-light border-0" name="tag" th:value="${tag}" placeholder="Tag">
+                    </div>
+                    <input type="hidden" name="size" th:value="${jobsPage.size}">
+                    <div class="col-12">
+                        <button class="btn btn-brand w-100" type="submit">Filtrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span>Besoin d'aide ? support@lbgconnect.test</span>
+        <span class="text-secondary">Demo Spring Boot</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

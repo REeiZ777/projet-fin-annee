@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menuisier Expérimenté - LBGconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LBGconnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#recherche">Recherche</a></li>
+                <li><a href="jobs.html" class="active">Offres</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Detail Section -->
+    <section class="job-detail-section">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="jobs.html">Offres d'emploi</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Menuisier Expérimenté</span>
+            </div>
+
+            <!-- Job Detail Layout -->
+            <div class="job-detail-layout">
+                <!-- Main Content -->
+                <div class="job-detail-main">
+                    <!-- Job Header -->
+                    <div class="job-detail-header">
+                        <div class="job-header-content">
+                            <div class="company-logo-large">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="job-header-info">
+                                <div class="job-badges">
+                                    <span class="job-badge new">Nouveau</span>
+                                    <span class="job-badge featured">À la une</span>
+                                </div>
+                                <h1>Menuisier Expérimenté</h1>
+                                <p class="company-name-large">
+                                    <a href="jobs.html">Atelier Bois Moderne SARL</a>
+                                </p>
+                                <div class="job-meta-large">
+                                    <span><i class="fas fa-map-marker-alt"></i> Abidjan, Cocody</span>
+                                    <span><i class="fas fa-briefcase"></i> CDI</span>
+                                    <span><i class="fas fa-clock"></i> Temps plein</span>
+                                    <span><i class="fas fa-calendar"></i> Publié il y a 2 jours</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-header-actions">
+                            <button class="btn btn-primary btn-lg" onclick="handleApply()">
+                                <i class="fas fa-paper-plane"></i>
+                                Postuler maintenant
+                            </button>
+                            <button class="btn btn-outline btn-lg" onclick="toggleHeart(this)">
+                                <i class="far fa-heart"></i>
+                                Sauvegarder
+                            </button>
+                            <button class="btn btn-outline btn-lg" onclick="handleShare()">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Job Description -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-file-alt"></i> Description du poste</h2>
+                        <p>Atelier Bois Moderne SARL, entreprise spécialisée dans la fabrication de meubles haut de
+                            gamme sur mesure, recherche un <strong>Menuisier Expérimenté</strong> pour renforcer son
+                            équipe de production.</p>
+                        <p>Vous serez en charge de la réalisation de meubles de qualité pour une clientèle exigeante
+                            (particuliers, hôtels, restaurants). Vous travaillerez dans un atelier moderne équipé de
+                            machines professionnelles et collaborerez avec une équipe passionnée.</p>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-tasks"></i> Missions principales</h2>
+                        <ul class="job-list">
+                            <li>Lecture et interprétation de plans techniques</li>
+                            <li>Découpe, assemblage et finition de meubles en bois massif</li>
+                            <li>Fabrication de meubles sur mesure selon les demandes clients</li>
+                            <li>Contrôle qualité des réalisations</li>
+                            <li>Entretien et maintenance des outils et machines</li>
+                            <li>Respect des délais de production</li>
+                            <li>Collaboration avec l'équipe de design pour optimiser les créations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-check-circle"></i> Profil recherché</h2>
+                        <h3>Compétences requises</h3>
+                        <ul class="job-list">
+                            <li>Minimum 5 ans d'expérience en menuiserie/ébénisterie</li>
+                            <li>Maîtrise des techniques de travail du bois (massif et dérivés)</li>
+                            <li>Connaissance des machines à bois (scie circulaire, dégauchisseuse, raboteuse, etc.)</li>
+                            <li>Capacité à lire et interpréter des plans techniques</li>
+                            <li>Sens du détail et souci de la qualité</li>
+                            <li>Autonomie et rigueur dans le travail</li>
+                        </ul>
+
+                        <h3>Atouts supplémentaires</h3>
+                        <ul class="job-list">
+                            <li>Formation en ébénisterie ou CAP Menuiserie</li>
+                            <li>Expérience en fabrication de meubles haut de gamme</li>
+                            <li>Connaissance des finitions (vernis, lasure, peinture)</li>
+                            <li>Créativité et sens artistique</li>
+                        </ul>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-gift"></i> Ce que nous offrons</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>
+                                    <strong>Salaire attractif</strong>
+                                    <span>150,000 - 250,000 FCFA/mois</span>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <strong>CDI</strong>
+                                    <span>Contrat à durée indéterminée</span>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong>Formation continue</strong>
+                                    <span>Développement des compétences</span>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Équipe dynamique</strong>
+                                    <span>Environnement collaboratif</span>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-tools"></i>
+                                <div>
+                                    <strong>Équipement moderne</strong>
+                                    <span>Machines professionnelles</span>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Évolution</strong>
+                                    <span>Possibilités d'avancement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to Apply -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-paper-plane"></i> Comment postuler</h2>
+                        <p>Pour postuler à cette offre, veuillez cliquer sur le bouton "Postuler maintenant" en haut de
+                            la page. Vous devrez créer un compte ou vous connecter pour soumettre votre candidature.</p>
+                        <p><strong>Documents requis :</strong></p>
+                        <ul class="job-list">
+                            <li>CV à jour</li>
+                            <li>Lettre de motivation</li>
+                            <li>Portfolio de réalisations (si disponible)</li>
+                            <li>Copies des diplômes et certificats</li>
+                        </ul>
+                        <div class="apply-cta">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Postuler à cette offre
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Similar Jobs -->
+                    <div class="job-detail-card">
+                        <h2><i class="fas fa-briefcase"></i> Offres similaires</h2>
+                        <div class="similar-jobs">
+                            <div class="similar-job-item">
+                                <div class="similar-job-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="similar-job-info">
+                                    <h4><a href="job-detail.html">Ébéniste Créateur</a></h4>
+                                    <p>Design Bois CI</p>
+                                    <span class="similar-job-location">Abidjan, Plateau</span>
+                                </div>
+                                <span class="similar-job-salary">180,000 FCFA</span>
+                            </div>
+                            <div class="similar-job-item">
+                                <div class="similar-job-icon color-2">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="similar-job-info">
+                                    <h4><a href="job-detail.html">Chef d'Atelier Menuiserie</a></h4>
+                                    <p>Menuiserie Industrielle</p>
+                                    <span class="similar-job-location">Bouaké</span>
+                                </div>
+                                <span class="similar-job-salary">200,000 FCFA</span>
+                            </div>
+                            <div class="similar-job-item">
+                                <div class="similar-job-icon color-3">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="similar-job-info">
+                                    <h4><a href="job-detail.html">Menuisier Poseur</a></h4>
+                                    <p>Aménagement Intérieur Pro</p>
+                                    <span class="similar-job-location">Abidjan, Marcory</span>
+                                </div>
+                                <span class="similar-job-salary">140,000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="job-detail-sidebar">
+                    <!-- Quick Apply -->
+                    <div class="job-detail-card sticky-card">
+                        <h3>Postuler rapidement</h3>
+                        <div class="quick-info">
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>
+                                    <strong>Salaire</strong>
+                                    <span>150,000 - 250,000 FCFA</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <strong>Type</strong>
+                                    <span>CDI - Temps plein</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Localisation</strong>
+                                    <span>Abidjan, Cocody</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <strong>Date limite</strong>
+                                    <span>31 Janvier 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Postuler maintenant
+                        </button>
+                        <button class="btn btn-outline btn-full">
+                            <i class="fas fa-heart"></i>
+                            Sauvegarder
+                        </button>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="job-detail-card">
+                        <h3>À propos de l'entreprise</h3>
+                        <div class="company-info">
+                            <div class="company-logo-medium">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Atelier Bois Moderne SARL</h4>
+                            <p>Entreprise spécialisée dans la fabrication de meubles haut de gamme depuis 2010.</p>
+                            <div class="company-stats">
+                                <div class="company-stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>15-20 employés</span>
+                                </div>
+                                <div class="company-stat">
+                                    <i class="fas fa-industry"></i>
+                                    <span>Menuiserie</span>
+                                </div>
+                            </div>
+                            <a href="jobs.html" class="btn btn-outline btn-full">Voir toutes les offres</a>
+                        </div>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="job-detail-card">
+                        <h3>Partager cette offre</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn link">
+                                <i class="fas fa-link"></i>
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LBGconnect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
